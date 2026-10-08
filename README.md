@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Loop Institute - Frontend Client 🚀
 
-## Getting Started
+The modern, responsive user interface for the Loop Institute of Coaching AI Customer Service platform.
 
-First, run the development server:
+📌 Overview
 
-```bash
+This repository contains the frontend application built with Next.js. It serves as the primary interface for users to interact with "Loopy", our intelligent AI Coaching Assistant. The application communicates with the Node.js API Gateway to ensure secure and efficient data routing.
+
+🏗 System Architecture
+
+graph LR
+    A[User] -->|Interacts| B(Next.js Frontend)
+    B -->|REST API| C{Node.js Gateway}
+    C -->|Forwards| D[FastAPI AI Engine]
+    D <--> E[(Supabase Vector DB)]
+    D <--> F[Google Gemini LLM]
+
+
+🚀 Getting Started
+
+Prerequisites
+
+Node.js (v18 or higher)
+
+npm or yarn
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/yourusername/loop-client.git
+cd loop-client
+
+
+Install dependencies:
+
+npm install
+
+
+Create a .env.local file in the root directory and add the Gateway URL:
+
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+
+
+Start the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000 with your browser to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📂 Project Structure
 
-## Learn More
+/components: Reusable UI components (Chatbox, Buttons, etc.)
 
-To learn more about Next.js, take a look at the following resources:
+/pages or /app: Next.js routing and views
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/styles: Global styles and Tailwind configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/public: Static assets (images, icons)
 
-## Deploy on Vercel
+👨‍💻 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ahmad Fadilah
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+LinkedIn Profile
